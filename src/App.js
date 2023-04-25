@@ -1,23 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
 
+import Confirm from './components/confirm';
 function App() {
+  const handleClick =(event) =>{
+    setDisplay("block");
+  }
+
+  const [display, setDisplay] = useState("none");
+
+  const confirm2Go = (value) => {
+
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div className="mybutton" onClick={handleClick}>
+
+    </div>
+    <div className="popup">
+      <Confirm display={display} setDisplay={setDisplay} confirm2Go={confirm2Go}/>
+    </div>
     </div>
   );
 }
